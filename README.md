@@ -1,4 +1,4 @@
-# KineticTransport
+# KineticTransport 461-ПиШ23
 
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://romka-star.github.io/KineticTransport.jl/stable/)
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://romka-star.github.io/KineticTransport.jl/dev/)
