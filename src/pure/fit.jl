@@ -29,3 +29,9 @@ function IKCAPE_visc_fit(T, mu)
     p = curve_fit(IKCAPE_fit, T, mu, p0).param
     return IKCAPE(p, minimum(T), maximum(T))
 end
+
+function PPDS_visc_fit(T, mu)
+    p0 = [1.0,2.0,5.0,4.0,6.0]
+    p = curve_fit(IKCAPE_fit, T, mu, p0).param
+    return PPDS(p, minimum(T), maximum(T))
+end
