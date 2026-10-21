@@ -30,7 +30,7 @@ mutable struct PPDS <: ViscosityModelPureLiquid
     Tmax::Float64
 end
 
-mutable struct ChapmanEnskogBrokaw <: ViscosityModelPureVapor
+mutable struct Chapman_Enskog_Brokaw <: ViscosityModelPureVapor
     params::Array{Float64}
     Tmin::Float64 
     Tmax::Float64

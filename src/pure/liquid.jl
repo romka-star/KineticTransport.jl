@@ -1,11 +1,11 @@
-function viscosity_pure(model::Andrade, T::Number)
+function viscosity_pure(model::Andrade, T::Number)  # Динамическая вязкость чистых жидкостей по модели Andrade
     A = model.params[1]
     B = model.params[2]
     C = model.params[3]
     return exp(A + B/T + C * log(T))
 end
 
-function viscosity_pure(model::DIPPR, T::Number)
+function viscosity_pure(model::DIPPR, T::Number)    # Динамическая вязкость чистых жидкостей по модели DIPPR
     C1 = model.params[1]
     C2 = model.params[2]
     C3 = model.params[3]
@@ -14,14 +14,14 @@ function viscosity_pure(model::DIPPR, T::Number)
     return exp(C1 + C2/T + C3*log(T) + C4*T^C5)
 end
 
-function viscosity_pure(model::IKCAPE, T::Number)
+function viscosity_pure(model::IKCAPE, T::Number)   # Динамическая вязкость чистых жидкостей по модели IKCAPE
     C1 = model.params[1]
     C2 = model.params[2]
     C3 = model.params[3]
     return C1 * exp(C2/T) + C3
 end
 
-function viscosity_pure(model::PPDS, T::Number)
+function viscosity_pure(model::PPDS, T::Number)     # Динамическая вязкость чистых жидкостей по модели PPDS
     A = model.params[1]
     B = model.params[2]
     C = model.params[3]
