@@ -2,7 +2,7 @@
 
 julia_version = "1.13.0"
 manifest_format = "2.1"
-project_hash = "12a9d6a1dc692221289d5c2a0643b010c2d3d1d3"
+project_hash = "41e19add92903cf64b6c43773df806a2b897b9b2"
 
 [[deps.ADTypes]]
 deps = ["PrecompileTools"]
@@ -157,6 +157,12 @@ version = "1.6.0"
     LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
     StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
 
+[[deps.DBInterface]]
+git-tree-sha1 = "3b22439978973353092e8782275c59e62f611e3b"
+registries = "General"
+uuid = "a10d1c49-ce27-4219-8d33-6db1a4562965"
+version = "2.8.0"
+
 [[deps.DataAPI]]
 git-tree-sha1 = "abe83f3a2f1b857aac70ef8b269080af17764bbe"
 registries = "General"
@@ -169,6 +175,12 @@ git-tree-sha1 = "b0bc6d2cad1fed8b7fd59a1551a991cb3d2809e6"
 registries = "General"
 uuid = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
 version = "0.19.6"
+
+[[deps.DataValueInterfaces]]
+git-tree-sha1 = "bfc1187b79289637fa0ef6d4436ebdfe6905cbd6"
+registries = "General"
+uuid = "e2d170a0-9d28-54be-80f0-106bbe20a464"
+version = "1.0.0"
 
 [[deps.Dates]]
 deps = ["Printf"]
@@ -352,6 +364,22 @@ registries = "General"
 uuid = "34004b35-14d8-5ef3-9330-4cdb6864b03a"
 version = "0.3.30"
 
+[[deps.InlineStrings]]
+git-tree-sha1 = "6e0a59a838f58259f49474e913e39c23e8ca1366"
+registries = "General"
+uuid = "842dd82b-1e85-43dc-bf29-5d0ee9dffc48"
+version = "2.0.1"
+
+    [deps.InlineStrings.extensions]
+    ArrowTypesExt = "ArrowTypes"
+    ParsersExt = "Parsers"
+    SerializationExt = "Serialization"
+
+    [deps.InlineStrings.weakdeps]
+    ArrowTypes = "31f734f8-188a-4ce0-8406-c8a06bd891cd"
+    Parsers = "69de0a69-1ddd-5017-9359-2bf0b02dc9f0"
+    Serialization = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
+
 [[deps.InverseFunctions]]
 git-tree-sha1 = "a779299d77cd080bf77b97535acecd73e1c5e5cb"
 registries = "General"
@@ -371,6 +399,12 @@ git-tree-sha1 = "b2d91fe939cae05960e760110b328288867b5758"
 registries = "General"
 uuid = "92d709cd-6900-40b7-9082-c6be49f344b6"
 version = "0.2.6"
+
+[[deps.IteratorInterfaceExtensions]]
+git-tree-sha1 = "a3f24677c21f5bbe9d2a714f95dcd58337fb2856"
+registries = "General"
+uuid = "82899510-4779-5014-852e-03e436cf321d"
+version = "1.0.0"
 
 [[deps.JLLWrappers]]
 deps = ["Artifacts", "Preferences"]
@@ -393,7 +427,7 @@ version = "1.10.0"
     ArrowTypes = "31f734f8-188a-4ce0-8406-c8a06bd891cd"
 
 [[deps.KineticTransport]]
-deps = ["Dierckx", "JSON", "LsqFit"]
+deps = ["DBInterface", "Dierckx", "JSON", "LsqFit", "SQLite"]
 path = "."
 uuid = "119422e0-d59a-43fd-8a84-0f03daa75900"
 version = "1.0.0-DEV"
@@ -593,6 +627,20 @@ version = "3.0.10"
 uuid = "ea8e919c-243c-51af-8825-aaa63cd721ce"
 version = "1.0.0"
 
+[[deps.SQLite]]
+deps = ["DBInterface", "Random", "SQLite_jll", "Serialization", "Tables", "WeakRefStrings"]
+git-tree-sha1 = "0393b6a3322096e1e269df61ef205a4acfb5a801"
+registries = "General"
+uuid = "0aa819cd-b072-5ff4-a722-6bc24af294d9"
+version = "1.11.0"
+
+[[deps.SQLite_jll]]
+deps = ["Artifacts", "JLLWrappers", "Libdl", "Zlib_jll", "dlfcn_win32_jll"]
+git-tree-sha1 = "ec7c8a5d23c3c5faf1c1e5a220840ecb8656b49d"
+registries = "General"
+uuid = "76ed43ae-9a5d-5a62-8c75-30186b810ce8"
+version = "3.54.1+0"
+
 [[deps.Serialization]]
 uuid = "9e88b42a-f829-5b0c-bbe9-9e923198166b"
 version = "1.11.0"
@@ -708,6 +756,20 @@ deps = ["Dates"]
 uuid = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
 version = "1.0.3"
 
+[[deps.TableTraits]]
+deps = ["IteratorInterfaceExtensions"]
+git-tree-sha1 = "c06b2f539df1c6efa794486abfb6ed2022561a39"
+registries = "General"
+uuid = "3783bdb8-4a98-5b6b-af9a-565f29a5fe9c"
+version = "1.0.1"
+
+[[deps.Tables]]
+deps = ["DataAPI", "DataValueInterfaces", "IteratorInterfaceExtensions", "OrderedCollections", "TableTraits"]
+git-tree-sha1 = "a94d9bdda1b7bed0046cea645639ab3f62196fac"
+registries = "General"
+uuid = "bd369af6-aec1-5ad0-b16a-f7cc5008161c"
+version = "1.14.0"
+
 [[deps.UUIDs]]
 deps = ["Random", "SHA"]
 uuid = "cf7118a7-6976-5b1a-9a39-7adc72f591a4"
@@ -716,6 +778,25 @@ version = "1.11.0"
 [[deps.Unicode]]
 uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 version = "1.11.0"
+
+[[deps.WeakRefStrings]]
+deps = ["DataAPI", "InlineStrings"]
+git-tree-sha1 = "88bd4a48cddcadc93fdfb45c3769c28d4fb15a11"
+registries = "General"
+uuid = "ea10d353-3f73-51f8-a26c-33c1cb351aa5"
+version = "2.0.1"
+
+[[deps.Zlib_jll]]
+deps = ["Libdl"]
+uuid = "83775a58-1f1d-513f-b197-d71354ab007a"
+version = "1.3.1+2"
+
+[[deps.dlfcn_win32_jll]]
+deps = ["Artifacts", "JLLWrappers", "Libdl"]
+git-tree-sha1 = "e141d67ffe550eadfb5af1bdbdaf138031e4805f"
+registries = "General"
+uuid = "c4b69c83-5512-53e3-94e6-de98773c479f"
+version = "1.4.2+0"
 
 [[deps.libblastrampoline_jll]]
 deps = ["Artifacts", "Libdl"]
